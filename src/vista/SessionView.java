@@ -20,7 +20,7 @@ public class SessionView {
         
     }
     
-    public void selectCourtAndHour(Date date, ArrayList<PadelCourt> courts, ArrayList<Booking> booking){
+    public void selectCourtAndHour(Date date, ArrayList<PadelCourt> courts, ArrayList<Booking> booking){      
         
     }
 }

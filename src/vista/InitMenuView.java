@@ -16,7 +16,7 @@ public class InitMenuView {
     private InitMenuController controller;
     private Scanner scanner;
 
-    public InitMenuView(InitMenuController initMenuController) {
+    public InitMenuView() {
         this.controller = controller;
         this.scanner = new Scanner(System.in);
     }

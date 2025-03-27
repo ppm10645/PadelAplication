@@ -22,7 +22,7 @@ public class InitMenuController {
 
     public InitMenuController() {
         this.view = new InitMenuView();
-        sessionController = sessionController(this);
+        sessionController = sessionController;
     }
 
     /**

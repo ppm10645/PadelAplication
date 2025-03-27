@@ -31,14 +31,7 @@ class SessionController {
      * Obten as reservas do xogador
      */
     public void loadSession(){
-        Calendar today = Calendar.getInstance();
-        today.set(Calendar.HOUR_OF_DAY, 0);
-        today.set(Calendar.MINUTE, 0);
-        today.set(Calendar.SECOND, 0);
-        today.set(Calendar.MILLISECOND, 0);
         
-        ArrayList<Booking> booking = BookingDB.findByUserAndDate(sessionPlayer.getId(), today.getTime());
-        view.showSessionMenu(booking);
     }
     
     /**
