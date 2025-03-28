@@ -11,6 +11,7 @@ import modelo.Booking;
 import modelo.PadelCourt;
 import modelo.Player;
 import persistencia.BookingDB;
+import persistencia.PadelManagerDB;
 import vista.SessionView;
 
 /**
@@ -30,7 +31,7 @@ class SessionController {
     /**
      * Obten as reservas do xogador
      */
-    public void loadSession(){
+    public void loadSession(){ 
         
     }
     

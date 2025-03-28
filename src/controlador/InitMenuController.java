@@ -17,12 +17,9 @@ import vista.InitMenuView;
 public class InitMenuController {
 
     private InitMenuView view;
-    private SessionController sessionController;
-
 
     public InitMenuController() {
-        this.view = new InitMenuView();
-        sessionController = sessionController;
+        this.view = new InitMenuView(this);
     }
 
     /**
@@ -46,6 +43,7 @@ public class InitMenuController {
         if (player == null) {
             view.showInvalidUser();
         } else {
+            SessionController sessionController = new SessionController(player);
             sessionController.loadSession();
         }
     }
