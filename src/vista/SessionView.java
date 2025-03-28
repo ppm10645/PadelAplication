@@ -6,8 +6,10 @@ package vista;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 import modelo.Booking;
 import modelo.PadelCourt;
+import controlador.SessionController;
 
 /**
  *
@@ -15,9 +17,22 @@ import modelo.PadelCourt;
  */
 public class SessionView {
     
+    private SessionController controller;
+    private Scanner scanner;
+
+    public SessionView(SessionController controller) {
+        this.controller = controller;
+        this.scanner = new Scanner(System.in);
+    }
+    
+    
+    
     
     public void showSessionMenu(ArrayList<Booking> booking){
         
+        System.out.println("Benbido a la aplicación de reserva de pistas de padel " + controller.getSessionPlayer().getName());
+        System.out.println("Saldo actual: " + controller.getSessionPlayer().getBalance());
+        System.out.println("Reservas recibidas: " );
     }
     
     public void selectCourtAndHour(Date date, ArrayList<PadelCourt> courts, ArrayList<Booking> booking){      

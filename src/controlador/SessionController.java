@@ -18,47 +18,67 @@ import vista.SessionView;
  *
  * @author joao.pedro.pereira
  */
-class SessionController {
-    
+public class SessionController {
+
     private SessionView view;
     private Player sessionPlayer; //Almacena o xogador que iniciou sesión
 
-    public SessionController(Player sessionPlayer) {
-        this.view = new SessionView();
+    public Player getSessionPlayer() {
+        return sessionPlayer;
+    }
+
+    public void setSessionPlayer(Player sessionPlayer) {
         this.sessionPlayer = sessionPlayer;
     }
     
+    
+
+    public SessionController(Player sessionPlayer) {
+        this.view = new SessionView(this);
+        this.sessionPlayer = sessionPlayer;
+    }
+
     /**
      * Obten as reservas do xogador
      */
-    public void loadSession(){ 
+    public void loadSession() {
         
+        Date date = new Date();
+        
+        date.setTime(0);
+        
+        ArrayList<Booking> bookings = PadelManagerDB.getBookings();
+        
+        BookingDB.findByDate(date);
+        
+        view.showSessionMenu(bookings);
     }
-    
+
     /**
      * Permite crear unha nova reserva
-     * @param data 
+     *
+     * @param data
      */
-    public void createBooking(Date date){
-        
+    public void createBooking(Date date) {
+
     }
-    
+
     /**
      * Engade o xogador a reserva e a garda
+     *
      * @param date
      * @param hour
-     * @param court 
+     * @param court
      */
-    public void completeBooking(Date date, String hour, PadelCourt court){
-        
+    public void completeBooking(Date date, String hour, PadelCourt court) {
+
     }
-    
+
     /**
      * Engade o xogador da sesión a unha reserva
      */
-    public void addPlayerToBooking(){
+    public void addPlayerToBooking() {
         loadSession();
     }
-    
-    
+
 }
